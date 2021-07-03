@@ -1,4 +1,4 @@
-export const GQL_ENDPOINT = 'https://soogeun.loca.lt/graphql'
+export const GQL_ENDPOINT = 'https://nuber-eats-backend-s.herokuapp.com/graphql'
 export const LOGO_IMG_URL = 'https://d1a3f4spazzrp4.cloudfront.net/arch-frontend/1.1.1/d1a3f4spazzrp4.cloudfront.net/eats/eats-logo-1a01872c77.svg'
 export const _404_IMG     = 'https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/d611f121110e16ba0ab072d584970d89.svg'
 
