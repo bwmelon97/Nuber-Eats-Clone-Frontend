@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { CreateAccount, Login, NotFound } from "@pages";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { CreateAccount, Login } from "@pages";
 
 function LoggedOutRouter () {
     return (
@@ -8,7 +8,7 @@ function LoggedOutRouter () {
             <Switch>
                 <Route exact path='/' > <Login /> </Route>
                 <Route path='/signup' > <CreateAccount /> </Route>
-                <Route> <NotFound /> </Route>
+                <Redirect to='/' />
             </Switch>
         </Router>
     )
