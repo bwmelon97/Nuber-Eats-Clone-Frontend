@@ -29,7 +29,8 @@ const inputStyle = `
 `
 
 type InputProps = {
-    isDirty: boolean;
+    isDirty?: boolean;
+    className?: string;
 }
 export const StyledInput = styled.input<InputProps>`
     ${tw`${inputStyle}`}
@@ -37,6 +38,7 @@ export const StyledInput = styled.input<InputProps>`
     ${props => props.isDirty && tw`
         ring-black
     `}
+    ${props => props.className && props.className}
 `
 
 export const StyledSelect = tw.select`${inputStyle}`

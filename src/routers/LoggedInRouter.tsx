@@ -5,6 +5,7 @@ import { UserRole } from "@gql-types/globalTypes";
 import { ClientRouter } from "./logged-in-routers";
 import { Header } from "@components";
 import useMe from "@hooks/useMe";
+import { EditProfilePage } from "@pages/users";
 
 function LoggedInRouter () {
     
@@ -24,6 +25,7 @@ function LoggedInRouter () {
             <Header />
             <Switch>
                 {role === UserRole.Client && ClientRouter.flat()}
+                <Route path='/edit-profile'> <EditProfilePage /> </Route>
                 <Route > <NotFound /> </Route>
             </Switch>
         </Router>
