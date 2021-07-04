@@ -6,14 +6,17 @@ import { ErrMsg, Form, FormContainer, NuberLink, PageWrapper, StyledButton, Styl
 import Logo from "@components/Logo";
 import { CreateAccountMutation, CreateAccountMutationVariables } from "@gql-types/CreateAccountMutation";
 import { UserRole } from "@gql-types/globalTypes";
-import { EMAIL_PATTERN } from "@constants";
+import { AUTH_TOKEN, EMAIL_PATTERN } from "@constants";
 import { Helmet } from "react-helmet-async";
+import { useHistory } from "react-router-dom";
+import { authTokenVar, isLoggedInVar } from "@apollo-client";
 
 const CREATE_ACCOUNT_MUTATION = gql`
     mutation CreateAccountMutation($createUserInput: CreateUserInput!) {
         createUser(input: $createUserInput) {
             ok
             error
+            token
         }
     }
 `;
@@ -26,6 +29,23 @@ type CreateAccountFormInput = {
 }
 
 function CreateAccount () {
+    
+    const history = useHistory();
+
+    const onCompleted = (data: CreateAccountMutation) => {
+        const { createUser: { ok, token } } = data;
+        if ( ok && token ) {
+            localStorage.setItem(AUTH_TOKEN, token);
+            authTokenVar(token)
+            isLoggedInVar(true)
+            history.push('/')
+        }
+    }
+    const [
+        createAccountMutation, 
+        { loading, data: createAccountMutationResult }
+    ] = useMutation< CreateAccountMutation, CreateAccountMutationVariables >(CREATE_ACCOUNT_MUTATION, { onCompleted })
+    
     const { 
         register, getValues, handleSubmit, 
         formState: { errors, isValid, touchedFields } 
@@ -33,14 +53,6 @@ function CreateAccount () {
         mode: 'onChange', 
         defaultValues: { role: UserRole.Client } 
     })
-    
-    const onCompleted = (data: CreateAccountMutation) => {
-        console.log('create account success')
-    }
-    const [
-        createAccountMutation, 
-        { loading, data: createAccountMutationResult }
-    ] = useMutation< CreateAccountMutation, CreateAccountMutationVariables >(CREATE_ACCOUNT_MUTATION, { onCompleted })
     
     const onSubmit = () => {
         if (!loading) {

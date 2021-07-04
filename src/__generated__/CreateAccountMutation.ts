@@ -13,6 +13,7 @@ export interface CreateAccountMutation_createUser {
   __typename: "CreateUserOutput";
   ok: boolean;
   error: string | null;
+  token: string | null;
 }
 
 export interface CreateAccountMutation {
