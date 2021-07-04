@@ -14,6 +14,7 @@ export interface MeQuery_me {
   id: number;
   email: string;
   role: UserRole;
+  profileImg: string | null;
 }
 
 export interface MeQuery {

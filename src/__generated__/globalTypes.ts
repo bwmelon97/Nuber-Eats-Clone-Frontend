@@ -17,6 +17,7 @@ export interface CreateUserInput {
   email: string;
   password: string;
   role: UserRole;
+  profileImg?: string | null;
 }
 
 export interface LoginInput {
