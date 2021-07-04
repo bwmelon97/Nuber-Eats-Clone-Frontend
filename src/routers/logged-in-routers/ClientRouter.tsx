@@ -1,12 +1,9 @@
 import React from 'react'
-import { Switch } from 'react-router'
+import { Route } from 'react-router'
+import { MainPage } from "@pages/clients";
 
-function ClientRouter () {
-    return (
-        <Switch>
-            
-        </Switch>
-    )
-}
+const ClientRouter = [
+    <Route exact path='/' > <MainPage /> </Route>
+]
 
 export default ClientRouter
