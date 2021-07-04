@@ -6,6 +6,7 @@
             "@pages": ["./pages/index.ts"],
             "@routers": ["./routers/index.ts"],
             "@constants": ["./constants.ts"],
+            "@components": ["./components/index.ts"],
 
             "@styles/*": ["./styles/*"],
             "@pages/*": ["./pages/*"],
