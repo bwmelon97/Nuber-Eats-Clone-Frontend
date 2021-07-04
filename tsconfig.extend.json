@@ -7,11 +7,13 @@
             "@routers": ["./routers/index.ts"],
             "@constants": ["./constants.ts"],
             "@components": ["./components/index.ts"],
+            "@hooks": ["./hooks/index.ts"],
 
             "@styles/*": ["./styles/*"],
             "@pages/*": ["./pages/*"],
             "@routers/*": ["./routers/*"],
             "@components/*": ["./components/*"],
+            "@hooks/*": ["./hooks/*"],
             "@gql-types/*": ["./__generated__/*"]
         }
     }
