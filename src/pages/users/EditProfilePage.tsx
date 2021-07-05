@@ -5,6 +5,17 @@ import { Form, StyledInput, StyledButton, ErrMsg } from "@components/FormCompone
 import { useForm } from "react-hook-form";
 import { EMAIL_PATTERN } from "@constants";
 import { UserProfileImage } from "@components";
+import { gql, useApolloClient, useMutation } from "@apollo/client";
+import { EditProfileMutation, EditProfileMutationVariables } from "@gql-types/EditProfileMutation";
+
+const EDIT_PROFILE_MUTATION = gql`
+    mutation EditProfileMutation ($input: EditProfileInput!) {
+        editProfile(input: $input) {
+            ok
+            error
+        }
+    }
+`;
 
 type FormProps = {
     email?: string;
@@ -12,16 +23,55 @@ type FormProps = {
 }
 
 const EditProfilePage = () => {
-    const { data } = useMe()
-    
+    const { data: userData } = useMe()
+    const client = useApolloClient();
+
+    const onCompleted = (data: EditProfileMutation) => {
+        const { editProfile: { ok } } = data;
+        if ( ok && userData ) {
+            const { 
+                me: { id, email: prevEmail } 
+            } = userData
+            const newEmail = getValues('email');
+
+            if ( prevEmail !== newEmail ) {
+                client.cache.writeFragment({
+                    id: `User:${id}`,
+                    fragment: gql`
+                        fragment UdatedUser on User {
+                            email
+                        }
+                    `,
+                    data: { email: newEmail }
+                })
+            }
+
+            window.alert("변경사항이 저장되었습니다 😊")
+        }
+    }
+
+    const [ editProfile, { loading, data: editProfileData } ] = useMutation<
+        EditProfileMutation, 
+        EditProfileMutationVariables
+    >(EDIT_PROFILE_MUTATION, { onCompleted })
+
     const { handleSubmit, register, formState, getValues } = useForm<FormProps>({
         mode: 'onChange',
-        defaultValues: { email: data?.me.email }
+        defaultValues: { email: userData?.me.email }
     })
     const { errors, isValid } = formState;
 
     const onSubmit = () => {
-        console.log(getValues())
+        const { email, password } = getValues();
+        if (!loading) {
+            editProfile({
+                variables: {
+                    input: {
+                        email, ...( password && { password })
+                    }
+                }
+            })
+        }
     }
 
     return (
@@ -64,10 +114,9 @@ const EditProfilePage = () => {
                         { errors.email?.message && <ErrMsg > {errors.email.message} </ErrMsg> }
                         { errors.password?.message && <ErrMsg > {errors.password.message} </ErrMsg> }
                         <StyledButton isVaild={isValid} >
-                            {/* { loading ? 'loading...' : 'Create Account' } */}
-                            Edit Profile
+                            { loading ? 'loading...' : 'Edit Profile' }
                         </StyledButton>
-                        {/* { createAccountMutationResult?.createUser.error && <ErrMsg > {createAccountMutationResult?.createUser.error} </ErrMsg> } */}
+                        { editProfileData?.editProfile.error && <ErrMsg > {editProfileData?.editProfile.error} </ErrMsg> }
                     </Form>
                     
                 </div>

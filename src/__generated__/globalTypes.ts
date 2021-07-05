@@ -20,6 +20,12 @@ export interface CreateUserInput {
   profileImg?: string | null;
 }
 
+export interface EditProfileInput {
+  email?: string | null;
+  password?: string | null;
+  profileImg?: string | null;
+}
+
 export interface LoginInput {
   email: string;
   password: string;
