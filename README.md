@@ -5,5 +5,4 @@
 
 
 ### Notion에 정리할 것
-* Apollo Cache에서 데이터 읽기 쓰기
-* Write Fagment vs reFetch
+* `cache.modify` 내용 공부해서 정리할 것
