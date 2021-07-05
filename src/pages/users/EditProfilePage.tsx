@@ -24,19 +24,18 @@ type FormProps = {
 
 const EditProfilePage = () => {
     const { data: userData } = useMe()
-    const client = useApolloClient();
+    const { cache } = useApolloClient();
 
     const onCompleted = (data: EditProfileMutation) => {
         const { editProfile: { ok } } = data;
         if ( ok && userData ) {
-            const { 
-                me: { id, email: prevEmail } 
-            } = userData
+            const { me } = userData
+            const { email: prevEmail } = me;
             const newEmail = getValues('email');
 
             if ( prevEmail !== newEmail ) {
-                client.cache.writeFragment({
-                    id: `User:${id}`,
+                cache.writeFragment({
+                    id: cache.identify(me),
                     fragment: gql`
                         fragment UdatedUser on User {
                             email
