@@ -26,6 +26,10 @@ export interface EditProfileInput {
   profileImg?: string | null;
 }
 
+export interface GetAllRestaurantsInput {
+  page?: number | null;
+}
+
 export interface LoginInput {
   email: string;
   password: string;
