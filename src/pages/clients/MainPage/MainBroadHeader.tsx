@@ -23,19 +23,19 @@ export const MainBroadHeader = () => {
 
             <div className='flex'>
                 <div 
-                    className='relative hidden h-60 w-80 bg-cover bg-center mr-4 xl:block cursor-pointer' 
+                    className='relative hidden h-60 w-80 bg-cover bg-center mr-4 xl:block cursor-pointer group' 
                     style={{backgroundImage: `url(${MAIN_PAGE_IMG_1})`}}
                 >
-                    <div className='h-full w-full bg-black opacity-10' />
+                    <div className='h-full w-full bg-black group-hover:opacity-5 opacity-20' />
                     <span className='absolute right-4 bottom-4 text-white font-bold text-xl'>
                         Go to Sushi (❁´◡`❁)
                     </span>
                 </div>
                 <div 
-                    className='relative hidden h-60 w-80 bg-cover bg-center 2xl:block cursor-pointer' 
+                    className='relative hidden h-60 w-80 bg-cover bg-center 2xl:block cursor-pointer group' 
                     style={{backgroundImage: `url(${MAIN_PAGE_IMG_2})`}}
                 >
-                    <div className='h-full w-full bg-black opacity-30' />
+                    <div className='h-full w-full bg-black group-hover:opacity-5 opacity-20' />
                     <span className='absolute right-4 bottom-4 text-white font-bold text-xl'>
                         Go to Desserts (*/ω＼*)
                     </span>
