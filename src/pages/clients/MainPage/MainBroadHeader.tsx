@@ -13,10 +13,10 @@ export const MainBroadHeader = () => {
                 </h4>
             </div>
 
-            <form>
+            <form className='lg:flex-auto mx-10 flex justify-center items-center' >
                 <input 
                     type='Search'
-                    className='outline-none py-3 px-5 rounded-full w-96'
+                    className='outline-none py-3 px-5 rounded-full w-96 lg:w-full lg:max-w-lg'
                     placeholder='Search for a favorite restaurant, cuisine, or dish.'
                 />
             </form>
