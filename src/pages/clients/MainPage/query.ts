@@ -30,3 +30,19 @@ export const MAIN_PAGE_QUERY = gql`
         }
     }
 `
+
+export const CATEGORY_QUERY = gql`
+    query CategoryQuery {
+        getAllCategories {
+            ok
+            error
+            categories {
+                id
+                name
+                coverImg
+                slug
+                restaurantCounts
+            }
+        }
+    }
+`;

@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { MainPageQuery, MainPageQueryVariables } from "@gql-types/MainPageQuery";
 import { MAIN_PAGE_QUERY } from "./query";
 import { MainBroadHeader } from "./MainBroadHeader";
+import { CategoryListBox } from "./CategoryListBox";
 
 
 const MainPage = () => {
@@ -23,12 +24,11 @@ const MainPage = () => {
             <Helmet>
                 <title> Main | Nuber-eats </title>
             </Helmet>
+            {!loading && data &&
             <div>
                 <MainBroadHeader />
-
-
-
-            </div>
+                <CategoryListBox />
+            </div>}
         </>
     )
 }
