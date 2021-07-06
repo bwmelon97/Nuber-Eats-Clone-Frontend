@@ -1,8 +1,6 @@
-import React from "react";
-import { gql, useQuery } from "@apollo/client";
-import { MainPageQuery, MainPageQueryVariables } from "@gql-types/MainPageQuery";
+import { gql } from "@apollo/client";
 
-const MAIN_PAGE_QUERY = gql`
+export const MAIN_PAGE_QUERY = gql`
     query MainPageQuery ($input: GetAllRestaurantsInput!) {
         getAllCategories {
             ok
@@ -32,24 +30,3 @@ const MAIN_PAGE_QUERY = gql`
         }
     }
 `
-
-const MainPage = () => {
-    const { loading, data } = useQuery<
-        MainPageQuery, 
-        MainPageQueryVariables
-    >(MAIN_PAGE_QUERY, {
-        variables: {
-            input: {
-                page: 1
-            }
-        }
-    })
-
-    return (
-        <div>
-            Main Page
-        </div>
-    )
-}
-
-export default MainPage
