@@ -25,6 +25,7 @@ export const MAIN_PAGE_QUERY = gql`
                 address
                 category {
                     name
+                    coverImg
                 }
             }
         }
@@ -46,3 +47,24 @@ export const CATEGORY_QUERY = gql`
         }
     }
 `;
+
+export const RESTAURANTS_QUERY = gql`
+    query RestaurantsQuery ($input: GetAllRestaurantsInput!) {
+        getAllRestaurants(input: $input) {
+            ok
+            error
+            totalPages
+            totalCounts
+            restaurants {
+                id
+                name
+                coverImg
+                address
+                category {
+                    name
+                    coverImg
+                }
+            }
+        }
+    }
+`

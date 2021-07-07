@@ -5,6 +5,7 @@ import { MainPageQuery, MainPageQueryVariables } from "@gql-types/MainPageQuery"
 import { MAIN_PAGE_QUERY } from "./query";
 import { MainBroadHeader } from "./MainBroadHeader";
 import { CategoryListBox } from "./CategoryListBox";
+import { RestaurantsGridBox } from "./RestaurantsGridBox";
 
 
 const MainPage = () => {
@@ -28,6 +29,7 @@ const MainPage = () => {
             <div>
                 <MainBroadHeader />
                 <CategoryListBox />
+                <RestaurantsGridBox />
             </div>}
         </>
     )

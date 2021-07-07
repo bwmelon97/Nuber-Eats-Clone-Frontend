@@ -28,6 +28,7 @@ export interface MainPageQuery_getAllCategories {
 export interface MainPageQuery_getAllRestaurants_restaurants_category {
   __typename: "Category";
   name: string;
+  coverImg: string | null;
 }
 
 export interface MainPageQuery_getAllRestaurants_restaurants {
