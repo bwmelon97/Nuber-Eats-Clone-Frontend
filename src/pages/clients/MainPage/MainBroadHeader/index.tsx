@@ -1,26 +1,24 @@
 import React from "react";
 import { MAIN_PAGE_IMG_1, MAIN_PAGE_IMG_2 } from "@constants";
+import SearchBar from "./SearchBar";
 
-export const MainBroadHeader = () => {
+
+const TitleBox = () => (
+    <div>
+        <h1 className='text-4xl text-white sm:text-5xl font-medium mb-4'>
+            Crave it? Get it.
+        </h1>
+        <h4 className='text-base text-white sm:text-lg '>
+            All the food in the world is here 😉
+        </h4>
+    </div>
+)
+
+const MainBroadHeader = () => {
     return (
         <div className='bg-gray-800 h-80 w-full px-5 xl:px-10 flex flex-col items-center justify-evenly lg:flex-row lg:justify-between py-10'  >
-            <div className=''>
-                <h1 className='text-white text-5xl font-medium mb-4'>
-                    Crave it? Get it.
-                </h1>
-                <h4 className='text-white text-lg '>
-                    All the food in the world is here 😉
-                </h4>
-            </div>
-
-            <form className='lg:flex-auto mx-10 flex justify-center items-center' >
-                <input 
-                    type='Search'
-                    className='outline-none py-3 px-5 rounded-full w-96 lg:w-full lg:max-w-lg'
-                    placeholder='Search for a favorite restaurant, cuisine, or dish.'
-                />
-            </form>
-
+            <TitleBox />
+            <SearchBar />
             <div className='flex'>
                 <div 
                     className='relative hidden h-60 w-80 bg-cover bg-center mr-4 xl:block cursor-pointer group' 
@@ -44,3 +42,5 @@ export const MainBroadHeader = () => {
         </div>
     )
 }
+
+export default MainBroadHeader;
