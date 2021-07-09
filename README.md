@@ -3,8 +3,7 @@
 ### 작업할 것
 * Restaurants Page
     - Restaurant Pagination
-    - Search Restaurants
-    - Category Tab
+    - Search Restaurants (Include Category)
     - Restaurant Page
 
 
