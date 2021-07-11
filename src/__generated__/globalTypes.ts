@@ -35,6 +35,11 @@ export interface LoginInput {
   password: string;
 }
 
+export interface SearchRestaurantsInput {
+  page?: number | null;
+  query: string;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

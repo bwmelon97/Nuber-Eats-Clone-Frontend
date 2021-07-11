@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { CATEGORY_FRAGMENT, RESTAURANT_FRAGMENT } from "@fragments";
 
 export const MAIN_PAGE_QUERY = gql`
     query MainPageQuery ($input: GetAllRestaurantsInput!) {
@@ -6,11 +7,8 @@ export const MAIN_PAGE_QUERY = gql`
             ok
             error
             categories {
-                id
+                ...CategoryFragment
                 name
-                coverImg
-                slug
-                restaurantCounts
             }
         }
         getAllRestaurants(input: $input) {
@@ -19,17 +17,12 @@ export const MAIN_PAGE_QUERY = gql`
             totalPages
             totalCounts
             restaurants {
-                id
-                name
-                coverImg
-                address
-                category {
-                    name
-                    coverImg
-                }
+                ...RestaurantFragment
             }
         }
     }
+    ${CATEGORY_FRAGMENT}
+    ${RESTAURANT_FRAGMENT}
 `
 
 export const CATEGORY_QUERY = gql`
