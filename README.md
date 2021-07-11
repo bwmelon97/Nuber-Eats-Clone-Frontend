@@ -4,6 +4,7 @@
 * Restaurants Page
     - Restaurant Pagination
     - Search Restaurants (Include Category)
+      Search Page에서는 헤더에 SearchBar 존재해야 함
     - Restaurant Page
 
 
