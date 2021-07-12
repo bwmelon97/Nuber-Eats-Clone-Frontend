@@ -2,10 +2,11 @@
 
 ### 작업할 것
 * Restaurants Page
-    - Restaurant Pagination
-    - Search Restaurants (Include Category)
-      Search Page에서는 헤더에 SearchBar 존재해야 함
-    - Restaurant Page
+  - Restaurant Pagination
+  - Search Page에 SearchBar 추가하기
+  - Restaurant Page
+
+* NotFound Page에서 position Absolute 때문에 Header 클릭 안되는 에러
 
 ### Notion에 정리할 것
 
