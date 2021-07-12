@@ -1,21 +1,20 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
-import { RestaurantsQuery, RestaurantsQueryVariables } from "@gql-types/RestaurantsQuery";
 import { Link } from "react-router-dom";
-import { RESTAURANTS_QUERY } from "./query";
 import PaddingXRule from "@components/clients/PaddingXDiv";
+import { OverWriteClassNameProps } from "@components/OverWriteClassNameProps";
+import { RestaurantFragment } from "@gql-types/RestaurantFragment";
 
+type RestaurantGridBoxProps = OverWriteClassNameProps & {
+    restaurants: RestaurantFragment[] | null;
+}
 
-export const RestaurantsGridBox = () => {
-    const { data } = useQuery<RestaurantsQuery, RestaurantsQueryVariables>(RESTAURANTS_QUERY, {
-        variables: { input: { page: 1 } }
-    });
+export const RestaurantsGridBox: React.FC<RestaurantGridBoxProps> = ({ className, restaurants }) => {
 
     return (
         <PaddingXRule className='mt-3 pb-32' >
             <div
-                className=' pt-8 border-t border-gray-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-10 '
-            >{ data && data.getAllRestaurants.restaurants?.map( (restaurant, idx) => 
+                className={`${className && className} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-10 `}
+            >{ restaurants?.map( (restaurant, idx) => 
                 <div key={idx}>
                     <Link to={`/restaurant/${restaurant.id}`}>
                         <div className='h-64 bg-cover bg-center mb-4' style={{backgroundImage: `url(${restaurant.coverImg})`}} >

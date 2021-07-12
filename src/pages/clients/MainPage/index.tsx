@@ -29,7 +29,10 @@ const MainPage = () => {
             <div>
                 <MainBroadHeader />
                 <CategoryListBox />
-                <RestaurantsGridBox />
+                <RestaurantsGridBox 
+                    className='pt-8 border-t border-gray-300' 
+                    restaurants={data.getAllRestaurants.restaurants}    
+                />
             </div>}
         </>
     )
