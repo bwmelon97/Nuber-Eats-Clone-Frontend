@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { RestaurantsQuery, RestaurantsQueryVariables } from "@gql-types/RestaurantsQuery";
 import { Link } from "react-router-dom";
 import { RESTAURANTS_QUERY } from "./query";
+import PaddingXRule from "@components/clients/PaddingXDiv";
 
 
 export const RestaurantsGridBox = () => {
@@ -11,7 +12,7 @@ export const RestaurantsGridBox = () => {
     });
 
     return (
-        <div className='px-5 lg:px-10 mt-3 pb-32' >
+        <PaddingXRule className='mt-3 pb-32' >
             <div
                 className=' pt-8 border-t border-gray-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-10 '
             >{ data && data.getAllRestaurants.restaurants?.map( (restaurant, idx) => 
@@ -39,6 +40,6 @@ export const RestaurantsGridBox = () => {
                     </div>
                 </div>
             )}</div>
-        </div>
+        </PaddingXRule>
     )
 }

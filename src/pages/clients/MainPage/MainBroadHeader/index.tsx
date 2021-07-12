@@ -1,6 +1,7 @@
 import React from "react";
 import { MAIN_PAGE_IMG_1, MAIN_PAGE_IMG_2 } from "@constants";
 import SearchBar from "./SearchBar";
+import PaddingXRule from "@components/clients/PaddingXDiv";
 
 
 const TitleBox = () => (
@@ -16,7 +17,7 @@ const TitleBox = () => (
 
 const MainBroadHeader = () => {
     return (
-        <div className='bg-gray-800 h-80 w-full px-5 xl:px-10 flex flex-col items-center justify-evenly lg:flex-row lg:justify-between py-10'  >
+        <PaddingXRule className='bg-gray-800 h-80 w-full flex flex-col items-center justify-evenly lg:flex-row lg:justify-between py-10'  >
             <TitleBox />
             <SearchBar />
             <div className='flex'>
@@ -39,7 +40,7 @@ const MainBroadHeader = () => {
                     </span>
                 </div>
             </div>
-        </div>
+        </PaddingXRule>
     )
 }
 
