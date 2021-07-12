@@ -31,14 +31,11 @@ export const CATEGORY_QUERY = gql`
             ok
             error
             categories {
-                id
-                name
-                coverImg
-                slug
-                restaurantCounts
+                ...CategoryFragment
             }
         }
     }
+    ${CATEGORY_FRAGMENT}
 `;
 
 export const RESTAURANTS_QUERY = gql`
@@ -49,15 +46,9 @@ export const RESTAURANTS_QUERY = gql`
             totalPages
             totalCounts
             restaurants {
-                id
-                name
-                coverImg
-                address
-                category {
-                    name
-                    coverImg
-                }
+                ...RestaurantFragment
             }
         }
     }
+    ${RESTAURANT_FRAGMENT}
 `
