@@ -5,6 +5,8 @@
   - Restaurant Pagination
   - Search Page에 SearchBar 추가하기
   - Restaurant Page
+    + Header 부분
+    + Dishes 부분
 
 * NotFound Page에서 position Absolute 때문에 Header 클릭 안되는 에러
 
