@@ -5,6 +5,7 @@ import { Logo } from "./";
 import { AUTH_TOKEN, BASIC_USER_IMG } from "@constants";
 import { Menu, Dropdown } from 'antd';
 import { useMe } from "@hooks";
+import PaddingXRule from "./clients/PaddingXDiv";
 
 const logout = () => {
     localStorage.setItem(AUTH_TOKEN, '')
@@ -25,7 +26,7 @@ const menu = (
 const Header = () => {
     const { data } = useMe()
     return (
-        <div className='flex flex-row items-center justify-between px-4 h-16 xl:px-10 xl:h-24' >
+        <PaddingXRule className='flex flex-row items-center justify-between h-16 lg:h-24' >
             <Link to='/' > <Logo /> </Link>
 
             <Dropdown overlay={menu} placement="bottomLeft" arrow trigger={['click']}>
@@ -41,7 +42,7 @@ const Header = () => {
                     }}    
                 />
             </Dropdown>
-        </div>
+        </PaddingXRule>
     )
 }
 
