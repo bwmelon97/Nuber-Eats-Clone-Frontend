@@ -1,6 +1,6 @@
 import React from "react";
 import { MAIN_PAGE_IMG_1, MAIN_PAGE_IMG_2 } from "@constants";
-import SearchBar from "./SearchBar";
+import SearchBar from "../../../../components/clients/SearchBar";
 import PaddingXRule from "@components/clients/PaddingXDiv";
 
 
@@ -19,7 +19,7 @@ const MainBroadHeader = () => {
     return (
         <PaddingXRule className='bg-gray-800 h-80 w-full flex flex-col items-center justify-evenly lg:flex-row lg:justify-between py-10'  >
             <TitleBox />
-            <SearchBar />
+            <SearchBar rounded className='w-80 sm:w-96 lg:w-full lg:max-w-lg' />
             <div className='flex'>
                 <div 
                     className='relative hidden h-60 w-80 bg-cover bg-center mr-4 xl:block cursor-pointer group' 
