@@ -7,8 +7,6 @@
     + Header 부분
     + Dishes 부분
 
-* NotFound Page에서 position Absolute 때문에 Header 클릭 안되는 에러
-
 ### Notion에 정리할 것
 
 * `cache.modify` 내용 공부해서 정리할 것

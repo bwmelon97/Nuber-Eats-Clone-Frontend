@@ -8,8 +8,8 @@ function NotFoundPage () {
     const goBack = () => history.goBack();
 
     return (
-        <div className='absolute top-0 bottom-0 left-0 right-0 flex justify-center' >
-            <div className='max-w-md w-full py-40 px-4 flex flex-col items-center' >
+        <div className='flex justify-center' >
+            <div className='max-w-md w-full py-32 px-4 flex flex-col items-center' >
                 {/* 언젠가 이미지 키우고 만다 ㅡ.ㅡ */}
                 <img 
                     onClick={goHome}
