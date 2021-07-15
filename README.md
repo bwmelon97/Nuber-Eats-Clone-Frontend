@@ -3,7 +3,6 @@
 ### 작업할 것
 * Restaurants Page
   - Restaurant Pagination
-  - Search Page에 SearchBar 추가하기
   - Restaurant Page
     + Header 부분
     + Dishes 부분
