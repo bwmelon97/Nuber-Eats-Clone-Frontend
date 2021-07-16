@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import PaddingXRule from "@components/clients/PaddingXDiv";
 import { OverWriteClassNameProps } from "@components/OverWriteProps";
 import { RestaurantFragment } from "@gql-types/RestaurantFragment";

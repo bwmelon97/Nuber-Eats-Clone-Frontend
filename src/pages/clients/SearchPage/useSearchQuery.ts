@@ -34,8 +34,6 @@ const useSearchQuery = (
         SearchRestaurantsQueryVariables
     >(SEARCH_RESTAURANTS_QUERY)
 
-    const {} = queryResult;
-
     if (!input) 
         return [callQuery, queryResult]
     

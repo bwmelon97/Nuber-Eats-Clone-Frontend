@@ -14,6 +14,7 @@ const SearchPage = () => {
     const history = useHistory();
     const { search } = location
     const decodedSearch = decodeURI(search)
+    // eslint-disable-next-line
     const [ _, query ] = decodedSearch.split('?q=')
 
     useEffect(() => {
