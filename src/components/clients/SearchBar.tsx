@@ -1,5 +1,5 @@
 import React from "react";
-import { OverWriteClassNameProps } from "@components/OverWriteClassNameProps";
+import { OverWriteClassNameProps } from "@components/OverWriteProps";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import useSearchQuery from "@pages/clients/SearchPage/useSearchQuery";
