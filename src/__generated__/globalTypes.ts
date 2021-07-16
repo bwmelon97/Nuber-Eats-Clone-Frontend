@@ -30,6 +30,10 @@ export interface GetAllRestaurantsInput {
   page?: number | null;
 }
 
+export interface GetRestaurantByIdInput {
+  restaurantId: number;
+}
+
 export interface LoginInput {
   email: string;
   password: string;
