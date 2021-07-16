@@ -3,7 +3,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import PaddingXRule from "@components/clients/PaddingXDiv";
 import { Helmet } from "react-helmet-async";
 import SearchBar from "../../../components/clients/SearchBar";
-import { RestaurantsGridBox } from "../MainPage/RestaurantsGridBox";
+import { RestaurantsGridBox } from "../../../components/clients/RestaurantsGridBox";
 import useSearchQuery from "./useSearchQuery";
 
 
