@@ -30,6 +30,10 @@ export interface GetAllRestaurantsInput {
   page?: number | null;
 }
 
+export interface GetMyRestaurantsInput {
+  page?: number | null;
+}
+
 export interface GetRestaurantByIdInput {
   restaurantId: number;
 }
