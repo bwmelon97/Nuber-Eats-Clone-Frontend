@@ -44,7 +44,7 @@ const SearchPage = () => {
 
                 </PaddingXRule>
                 { !loading && data ?
-                    <RestaurantsGridBox restaurants={data.searchRestaurants.restaurants} /> :
+                    <RestaurantsGridBox restaurants={data.searchRestaurants.restaurants} parentPage='search' /> :
             
                     <PaddingXRule>
                         <div className='text-2xl' >

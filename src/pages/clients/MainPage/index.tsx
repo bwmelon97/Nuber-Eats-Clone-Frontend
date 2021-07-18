@@ -29,6 +29,7 @@ const MainPage = () => {
                 <MainBroadHeader />
                 <CategoryListBox />
                 <RestaurantsGridBox 
+                    parentPage='client-main'
                     className='pt-8 border-t border-gray-300' 
                     restaurants={data.getAllRestaurants.restaurants}    
                 />
