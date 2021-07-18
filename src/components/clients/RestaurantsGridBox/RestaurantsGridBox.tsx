@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import PaddingXRule from "@components/clients/PaddingXDiv";
+import PaddingXRule from "@components/PaddingXDiv";
 import { OverWriteClassNameProps } from "@components/OverWriteProps";
 import { RestaurantFragment } from "@gql-types/RestaurantFragment";
 import { _404_IMG } from "@constants";

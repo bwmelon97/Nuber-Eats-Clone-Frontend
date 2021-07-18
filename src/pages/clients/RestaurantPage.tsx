@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import PaddingXRule from "@components/clients/PaddingXDiv";
+import PaddingXRule from "@components/PaddingXDiv";
 import { RESTAURANT_FRAGMENT } from "@fragments";
 import { GetRestaurantQeury, GetRestaurantQeuryVariables } from "@gql-types/GetRestaurantQeury";
 import { useParams } from "react-router-dom";

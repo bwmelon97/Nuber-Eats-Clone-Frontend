@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { CategoryQuery } from "@gql-types/CategoryQuery";
 import { CATEGORY_QUERY } from "../query";
 import CategoryItem from "./CategoryItem";
-import PaddingXRule from "@components/clients/PaddingXDiv";
+import PaddingXRule from "@components/PaddingXDiv";
 
 
 const CategoryListBox = () => {

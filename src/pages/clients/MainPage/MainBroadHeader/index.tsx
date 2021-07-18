@@ -1,7 +1,7 @@
 import React from "react";
 import { MAIN_PAGE_IMG_1, MAIN_PAGE_IMG_2 } from "@constants";
 import SearchBar from "../../../../components/clients/SearchBar";
-import PaddingXRule from "@components/clients/PaddingXDiv";
+import PaddingXRule from "@components/PaddingXDiv";
 
 
 const TitleBox = () => (

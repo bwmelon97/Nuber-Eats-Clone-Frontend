@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import PaddingXRule from "@components/clients/PaddingXDiv";
+import PaddingXRule from "@components/PaddingXDiv";
 import { Helmet } from "react-helmet-async";
 import SearchBar from "../../../components/clients/SearchBar";
 import RestaurantsGridBox from "../../../components/clients/RestaurantsGridBox";

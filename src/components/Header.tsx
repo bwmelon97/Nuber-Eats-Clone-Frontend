@@ -5,7 +5,7 @@ import { Logo } from "./";
 import { AUTH_TOKEN, BASIC_USER_IMG } from "@constants";
 import { Menu, Dropdown } from 'antd';
 import { useMe } from "@hooks";
-import PaddingXRule from "./clients/PaddingXDiv";
+import PaddingXRule from "./PaddingXDiv";
 
 const logout = () => {
     localStorage.setItem(AUTH_TOKEN, '')
