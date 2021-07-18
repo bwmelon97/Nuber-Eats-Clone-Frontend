@@ -6,8 +6,6 @@
   - Restaurant Page
     + Dishes 부분
 
-* Owner Routing
-* Get My Restaurants Page
 * Create Restaurant Page
   - 페이지 디자인
   - 파일 업로드
